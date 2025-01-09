@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@400;600&display=swap");
+
+.uim-tertiary {
+  fill: #66c2f7;
+}
+
+.uim-primary {
+  fill: #0b8dd8;
+}
+.uim-primary2 {
+  fill: #f8fcff;
+}
+
+
+.uim-quaternary {
+  fill: #a0d9fa;
+}
