@@ -135,8 +135,8 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="contact">
-        <a href="flex gap-4  bg-black ">
-          <i className="size-4">
+        <a href=" flex gap-4  bg-black ">
+          <i className=" block size-7 flex-shrink-0  ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
               <path
                 className="uim-tertiary"
