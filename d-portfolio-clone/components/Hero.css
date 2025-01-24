@@ -1,0 +1,74 @@
+.left h1:first-child {
+  animation: show-item 500ms linear 100ms 1 forwards;
+  opacity: 0;
+}
+.left p:first-of-type {
+  animation: show-item 500ms linear 300ms 1 forwards;
+  opacity: 0;
+}
+.left p:last-of-type {
+  animation: show-item 500ms linear 500ms 1 forwards;
+  opacity: 0;
+}
+.left div:last-child {
+  animation: show-item 500ms linear 700ms 1 forwards;
+  opacity: 0;
+}
+
+.zoom-in {
+  animation: zoom 500ms linear forwards;
+}
+
+.zoom-in-2 {
+  animation: zoom2 500ms linear forwards;
+}
+
+.gradient {
+  overflow-x: hidden;
+  animation: rotate-gradient 500ms linear;
+}
+
+@keyframes rotate-gradient {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes zoom2 {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 20%;
+  }
+}
+
+@keyframes round {
+  from {
+    transform: rotateZ(90deg);
+  }
+  to {
+    transform: rotateZ(0deg);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(6);
+  }
+}
+
+@keyframes show-item {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

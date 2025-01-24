@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${blinker.className}  min-h-dvh bg-neutral-900  antialiased`}
+        className={`${blinker.className}   bg-neutral-900  `}
       >
         {children}
       </body>
