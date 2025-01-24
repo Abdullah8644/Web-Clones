@@ -3,8 +3,11 @@ import Navbar from "@/components/Navbar";
 import { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "../styles/locomotive-scroll.css";
+import Hero from "@/components/Hero";
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState<number>(0);
+
   const scroll_container = useRef<HTMLDivElement | null>(null);
   const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
     hero: null,
@@ -18,32 +21,46 @@ export default function Home() {
 
   const currentSectionRef = useRef<string>("");
 
-  // useEffect(() => {
-  //   if (!scroll_container.current) return;
-  //   const scroll = new LocomotiveScroll({
-  //     el: scroll_container.current,
-  //     smooth: true,
-  //     multiplier: 1.5,
+  useEffect(() => {
+    if (!scroll_container.current) return;
 
-  //     lerp: 0.05,
-  //   });
-  // });
+    const scroll = new LocomotiveScroll({
+      el: scroll_container.current,
+      smooth: true,
+      multiplier: 1.5,
+      lerp: 0.05,
+    });
+
+    const handleScroll = (s: any) => {
+      if(s.scroll.y > 200)
+      setScrollY(s.scroll.y-350);
+    };
+
+    scroll.on("scroll", handleScroll);
+
+    return () => {
+      scroll.destroy();
+    };
+  }, []); // Empty dependency array to run only once on mount
 
   return (
     <>
-      <header className="fixed top-0 z-10  w-full px-5     ">
+      <header className="fixed top-0 z-10 w-full px-5">
         <Navbar />
       </header>
-      <main ref={scroll_container} id="scroll-container">
+      <main
+        ref={scroll_container}
+        id="scroll-container"
+        className="overflow-x-hidden"
+      >
         <section
-          className="min-h-dvh mx-5 bg-white mt-28 rounded-p my-20 py-32 "
+          className="min-h-dvh mx-5 bg-white mt-28 rounded-p my-20 py-[7.5rem]"
           id="hero"
           ref={(el) => {
             sectionRefs.current.hero = el as HTMLDivElement;
           }}
         >
-          <h1 className="text-[75px] font-semibold px-6 leading-[83px]" >We design <span className="text-primary" >apps, websites & brands.</span><br />
-          We work with manufacturing, fintech <br /> and retail </h1>
+          <Hero scrollY={scrollY} />
         </section>
         <section
           id="about"
