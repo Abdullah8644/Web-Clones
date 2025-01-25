@@ -2,3 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
+@font-face {
+  font-family: "courier";
+  src: url("/fonts/font.otf") format("otf");
+  font-weight: normal;
+  font-style: normal;
+}

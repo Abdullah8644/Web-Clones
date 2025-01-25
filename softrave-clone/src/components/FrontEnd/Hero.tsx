@@ -18,7 +18,7 @@ const Hero = ({ scrollY }: { scrollY: number }) => {
           x: scrollY * -0.5,
         }}
         transition={{ duration: 0.5 }}
-        className="flex w-full h-10 items-center gap-10 my-20  "
+        className="flex w-full h-10 items-center gap-10 my-20 mb-5  "
       >
         {companyes.map((company, index) => {
           return (

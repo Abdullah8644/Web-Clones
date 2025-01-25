@@ -1,9 +1,10 @@
 "use client";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/FrontEnd/Navbar";
 import { useEffect, useRef, useState } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "../styles/locomotive-scroll.css";
-import Hero from "@/components/Hero";
+import Hero from "@/components/FrontEnd/Hero";
+import About from "@/components/FrontEnd/About";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState<number>(0);
@@ -27,13 +28,12 @@ export default function Home() {
     const scroll = new LocomotiveScroll({
       el: scroll_container.current,
       smooth: true,
-      multiplier: 1.5,
+      multiplier: 1,
       lerp: 0.05,
     });
 
     const handleScroll = (s: any) => {
-      if(s.scroll.y > 200)
-      setScrollY(s.scroll.y-350);
+      if (s.scroll.y > 200) setScrollY(s.scroll.y - 350);
     };
 
     scroll.on("scroll", handleScroll);
@@ -45,16 +45,13 @@ export default function Home() {
 
   return (
     <>
-      <header className="fixed top-0 z-10 w-full px-5">
-        <Navbar />
-      </header>
       <main
         ref={scroll_container}
         id="scroll-container"
         className="overflow-x-hidden"
       >
         <section
-          className="min-h-dvh mx-5 bg-white mt-28 rounded-p my-20 py-[7.5rem]"
+          className="min-h-dvh mx-5 bg-white mt-28 rounded-p  py-[7.5rem]"
           id="hero"
           ref={(el) => {
             sectionRefs.current.hero = el as HTMLDivElement;
@@ -67,16 +64,16 @@ export default function Home() {
           ref={(el) => {
             sectionRefs.current.about = el as HTMLDivElement;
           }}
-          style={{ height: "100vh", background: "lightcoral" }}
+          className="min-h-dvh grid grid-cols-10   mx-5 my-16 "
         >
-          <h1>Section 2</h1>
+          <About />
         </section>
         <section
           id="projects"
           ref={(el) => {
             sectionRefs.current.projects = el as HTMLDivElement;
           }}
-          style={{ height: "100vh", background: "lightgreen" }}
+          style={{ height: "100vh", background: "" }}
         >
           <h1>Section 3</h1>
         </section>
