@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import MySwiper from "../FrontEnd/Swipper-Component";
 
+
 const Projects = () => {
   type CardData = {
     heading: string;
@@ -42,7 +43,7 @@ const Projects = () => {
           darkText={cardData.darkText}
         />
       </section>
-      {/* <section className="ui-ux bg-white rounded-p px-[30px] py-[50px] flex flex-col gap-10 ">
+      <section className="ui-ux bg-white rounded-p px-[30px] py-[50px] flex flex-col gap-10 ">
         <div className="flex justify-between">
           <h1 className="text-primary text-[38px] font-semibold  ">
             UI/UX design
@@ -81,7 +82,7 @@ const Projects = () => {
           cardBackground={cardData.cardBackground}
           darkText={cardData.darkText}
         />
-      </section> */}
+      </section>
      
     </>
   );

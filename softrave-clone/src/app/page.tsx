@@ -23,18 +23,24 @@ export default function Home() {
 
   const currentSectionRef = useRef<string>("");
 
+  const [projectLoaded, setProjectsLoaded] = useState<boolean>();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setProjectsLoaded(true), 500); // Delay loading
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     if (!scroll_container.current) return;
 
     const scroll = new LocomotiveScroll({
       el: scroll_container.current,
       smooth: true,
-      multiplier: 1,
-      lerp: 0.05,
+      lerp: 0.1,
     });
 
     const handleScroll = (s: any) => {
-      if (s.scroll.y > 100) setScrollY(s.scroll.y - 350);
+      if (s.scroll.y > 100 && s.scroll.y < 700) setScrollY(s.scroll.y - 350);
     };
 
     scroll.on("scroll", handleScroll);
@@ -76,7 +82,7 @@ export default function Home() {
           }}
           className="min-h-dvh mx-5 flex flex-col gap-5"
         >
-          <Projects />
+          {projectLoaded && <Projects />}
         </section>
         <section
           id="services"

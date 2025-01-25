@@ -27,6 +27,8 @@ const Hero = ({ scrollY }: { scrollY: number }) => {
                 src={`/company-logos/company-${company}.png`}
                 alt={`company-${company} `}
                 fill={true}
+                priority
+                loading="eager"
                 className="object-contain"
               />
             </li>
