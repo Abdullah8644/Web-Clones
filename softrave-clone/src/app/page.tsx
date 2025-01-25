@@ -5,6 +5,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import "../styles/locomotive-scroll.css";
 import Hero from "@/components/FrontEnd/Hero";
 import About from "@/components/FrontEnd/About";
+import Projects from "@/components/Backend/Projects";
 
 export default function Home() {
   const [scrollY, setScrollY] = useState<number>(0);
@@ -33,7 +34,7 @@ export default function Home() {
     });
 
     const handleScroll = (s: any) => {
-      if (s.scroll.y > 200) setScrollY(s.scroll.y - 350);
+      if (s.scroll.y > 100) setScrollY(s.scroll.y - 350);
     };
 
     scroll.on("scroll", handleScroll);
@@ -60,11 +61,11 @@ export default function Home() {
           <Hero scrollY={scrollY} />
         </section>
         <section
-          id="about"
+          id="about us"
           ref={(el) => {
             sectionRefs.current.about = el as HTMLDivElement;
           }}
-          className="min-h-dvh grid grid-cols-10   mx-5 my-16 "
+          className="h-fit grid grid-cols-10   mx-5 my-16 "
         >
           <About />
         </section>
@@ -73,9 +74,9 @@ export default function Home() {
           ref={(el) => {
             sectionRefs.current.projects = el as HTMLDivElement;
           }}
-          style={{ height: "100vh", background: "" }}
+          className="min-h-dvh mx-5 flex flex-col gap-5"
         >
-          <h1>Section 3</h1>
+          <Projects />
         </section>
         <section
           id="services"
