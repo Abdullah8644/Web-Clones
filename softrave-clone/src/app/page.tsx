@@ -1,54 +1,26 @@
 "use client";
 import Navbar from "@/components/FrontEnd/Navbar";
 import { useEffect, useRef, useState } from "react";
-import LocomotiveScroll from "locomotive-scroll";
+
 import "../styles/locomotive-scroll.css";
 import Hero from "@/components/FrontEnd/Hero";
 import About from "@/components/FrontEnd/About";
 import Projects from "@/components/Backend/Projects";
+import Services from "@/components/FrontEnd/Services";
+import Faq from "@/components/FrontEnd/Faq";
+import Contact from "@/components/FrontEnd/Contact";
+import Footer from "@/components/FrontEnd/Footer";
+import GoUp from "@/components/FrontEnd/GoUp";
 
 export default function Home() {
-  const [scrollY, setScrollY] = useState<number>(0);
-
   const scroll_container = useRef<HTMLDivElement | null>(null);
-  const sectionRefs = useRef<Record<string, HTMLDivElement | null>>({
-    hero: null,
-    about: null,
-    projects: null,
-    services: null,
-    faq: null,
-    contact: null,
-    footer: null,
-  });
-
-  const currentSectionRef = useRef<string>("");
 
   const [projectLoaded, setProjectsLoaded] = useState<boolean>();
 
   useEffect(() => {
-    const timer = setTimeout(() => setProjectsLoaded(true), 500); // Delay loading
+    const timer = setTimeout(() => setProjectsLoaded(true), 1000); // Delay loading
     return () => clearTimeout(timer);
   }, []);
-
-  useEffect(() => {
-    if (!scroll_container.current) return;
-
-    const scroll = new LocomotiveScroll({
-      el: scroll_container.current,
-      smooth: true,
-      lerp: 0.1,
-    });
-
-    const handleScroll = (s: any) => {
-      if (s.scroll.y > 100 && s.scroll.y < 700) setScrollY(s.scroll.y - 350);
-    };
-
-    scroll.on("scroll", handleScroll);
-
-    return () => {
-      scroll.destroy();
-    };
-  }, []); // Empty dependency array to run only once on mount
 
   return (
     <>
@@ -58,68 +30,31 @@ export default function Home() {
         className="overflow-x-hidden"
       >
         <section
-          className="min-h-dvh mx-5 bg-white mt-28 rounded-p  py-[7.5rem]"
+          className="min-h-dvh mx-5 bg-white mt-28   rounded-p  py-[7.5rem]"
           id="hero"
-          ref={(el) => {
-            sectionRefs.current.hero = el as HTMLDivElement;
-          }}
         >
-          <Hero scrollY={scrollY} />
+          <Hero />
         </section>
+        <GoUp />
         <section
           id="about us"
-          ref={(el) => {
-            sectionRefs.current.about = el as HTMLDivElement;
-          }}
           className="h-fit grid grid-cols-10   mx-5 my-16 "
         >
           <About />
         </section>
-        <section
-          id="projects"
-          ref={(el) => {
-            sectionRefs.current.projects = el as HTMLDivElement;
-          }}
-          className="min-h-dvh mx-5 flex flex-col gap-5"
-        >
+        <section id="projects" className="min-h-dvh mx-5 flex flex-col gap-5">
           {projectLoaded && <Projects />}
         </section>
         <section
           id="services"
-          ref={(el) => {
-            sectionRefs.current.services = el as HTMLDivElement;
-          }}
-          style={{ height: "100vh", background: "lightyellow" }}
+          className="min-h-dvh mx-5  bg-white rounded-p my-5  p-10   "
         >
-          <h1>Section 4</h1>
+          <Services />
         </section>
-        <section
-          id="faq"
-          ref={(el) => {
-            sectionRefs.current.faq = el as HTMLDivElement;
-          }}
-          style={{ height: "100vh", background: "lightpink" }}
-        >
-          <h1>Section 5</h1>
+        <section id="faq" className="min-h-dvh pt-16 px-5  ">
+          <Faq />
         </section>
-        <section
-          id="contact"
-          ref={(el) => {
-            sectionRefs.current.contact = el as HTMLDivElement;
-          }}
-          style={{ height: "100vh", background: "lightpurple" }}
-        >
-          <h1>Section 6</h1>
-        </section>
-        <section
-          id="footer"
-          ref={(el) => {
-            sectionRefs.current.footer = el as HTMLDivElement;
-          }}
-          style={{ height: "100vh", background: "lightgray" }}
-        >
-          <h1>Section 7</h1>
-        </section>
+
       </main>
     </>
   );

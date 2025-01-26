@@ -4,6 +4,7 @@ import React from "react";
 import { animate } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const Navbar = () => {
   const pathname: string = usePathname();
@@ -14,7 +15,7 @@ const Navbar = () => {
       const topPosition = target.offsetTop; // Get the section's position
       // Animate the scroll
       animate(window.scrollY, topPosition, {
-        duration: 0.2, // Duration of the scroll in seconds
+        duration: 1, // Duration of the scroll in seconds
 
         onUpdate: (value) => {
           window.scrollTo(0, value);
@@ -53,9 +54,14 @@ const Navbar = () => {
           );
         })}
       </ul>
-      <div className="contact-btn text-white bg-primary px-9 text-base tracking-wide   py-2.5 rounded-xl font-bold ">
+      <Link
+        href={
+          "https://api.whatsapp.com/send?phone=+923348177646&text=Hello,%20I%27m%20reaching%20out%20via%20Softrave.com%20to%20discuss%20a%20project."
+        }
+        className="contact-btn text-white bg-primary px-9 text-base tracking-wide duration-500 hover:-translate-y-1 hover:cursor-pointer   py-2.5 rounded-xl font-bold "
+      >
         discuss the project
-      </div>
+      </Link>
     </nav>
   );
 };

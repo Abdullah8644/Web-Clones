@@ -9,3 +9,9 @@
   font-weight: normal;
   font-style: normal;
 }
+
+.not-found>div:first-child{
+  background: linear-gradient(145deg, #5162ff, #ee076e);
+  background-clip: text;
+  -webkit-background-clip: text;
+}

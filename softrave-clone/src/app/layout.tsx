@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/FrontEnd/Navbar";
+import Contact from "@/components/FrontEnd/Contact";
+import Footer from "@/components/FrontEnd/Footer";
 
 const notosans = Noto_Sans({
   variable: "--font-geist-sans",
@@ -20,11 +22,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${notosans.className}  antialiased bg-secondary `}>
-        <header className="fixed top-0 z-10 w-full px-5">
+      <body className={`${notosans.className}  antialiased bg-secondary`}>
+        <header className="fixed top-0  z-20 w-full px-5">
           <Navbar />
         </header>
-        {children}
+        <div className="overflow-hidden" >
+          {children}
+          <section id="contact" className="min-h-dvh ">
+            <Contact />
+          </section>
+          <section
+            id="footer"
+            className="h-[60vh] w-screen bg-[#313131]  grid grid-cols-2 grid-rows-8 px-16 "
+          >
+            <Footer />.
+          </section>
+        </div>
       </body>
     </html>
   );
