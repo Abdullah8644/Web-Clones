@@ -2,7 +2,6 @@ import React from "react";
 
 import Image from "next/image";
 
-
 const About = () => {
   return (
     <>
@@ -32,8 +31,8 @@ const About = () => {
         className={`boxes flex  font-courier text-[14px] gap-5 col-span-10 lg:col-span-6 leading-8 w-full  px-5 lg:px-10    `}
       >
         <div className="box bg-[#eee] text-body  px-3 py-5 w-[50%] ">
-          Softrave is more than a digital agency. We're a team of visionaries
-          committed to redefining digital excellence.
+          Softrave is more than a digital agency. We&apos;re a team of
+          visionaries committed to redefining digital excellence.
         </div>
         <div className="box bg-[#eee] text-body  px-3 py-5 w-[50%] ">
           We believe in the transformative power of design and technology to

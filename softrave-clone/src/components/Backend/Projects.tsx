@@ -139,7 +139,7 @@ const Projects = () => {
 
   return (
     <>
-      {sections.map((section, index) => {
+      {sections.map((section) => {
         return (
           <section
             key={section.section_id}

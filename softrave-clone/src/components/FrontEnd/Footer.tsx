@@ -30,7 +30,7 @@ const Footer = () => {
       <div className="flex justify-start items-center">
         <p className="font-light text-white w-1/2   leading-7 ">
           Reach out to us via email or whatsapp. Share your tasks with us, and
-          let's engage in a conversation to transform them into impactful
+          let&apos;s engage in a conversation to transform them into impactful
           digital experiences.
         </p>
       </div>
@@ -51,16 +51,15 @@ const Footer = () => {
           })}
         </ul>
       </div>
-      <div className="line bottom-[15%]  lg:bottom-[20%] bg-white w-screen h-1  absolute left-0 opacity-15 " ></div>
+      <div className="line bottom-[15%]  lg:bottom-[20%] bg-white w-screen h-1  absolute left-0 opacity-15 "></div>
       <div></div>
       <div className="w-full font-light py-4   border-opacity-20 flex justify-between text-white items-end    ">
         <span>© 2020-2025 Softrave</span>
-        <div className="flex items-center w-1/2 pr-60  justify-between" >
+        <div className="flex items-center w-1/2 pr-60  justify-between">
           <span>Privacy Policy</span>
           <span>Terms</span>
         </div>
       </div>
-      
     </>
   );
 };

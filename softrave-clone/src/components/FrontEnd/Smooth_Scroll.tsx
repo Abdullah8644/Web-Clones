@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect } from "react";
+import LocomotiveScroll from "locomotive-scroll";
 
-let locomotiveScroll: any;
+let locomotiveScroll: LocomotiveScroll;
 
 const handleScrollTo = (id: string) => {
   if (locomotiveScroll) {
