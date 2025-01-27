@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -15,7 +15,7 @@ function mapRange(
 }
 
 const Contact = () => {
-  let isMinWidth1023: boolean;
+  const isMinWidth1023 = useRef<boolean>(false);
 
   const [pathname, setPathname] = useState<string>();
   const [scrollY, setScrollY] = useState(0);
@@ -27,7 +27,7 @@ const Contact = () => {
   }, [path, pathname]);
 
   useEffect(() => {
-    isMinWidth1023 = window.matchMedia("(min-width: 1023px)").matches;
+    isMinWidth1023.current = window.matchMedia("(min-width: 1023px)").matches;
 
     const handleScroll = () => {
       const documentHeight = document.documentElement.scrollHeight;
