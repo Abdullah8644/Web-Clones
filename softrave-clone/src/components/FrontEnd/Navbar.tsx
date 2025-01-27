@@ -5,23 +5,13 @@ import { animate } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { handleScrollTo } from "./Smooth_Scroll";
 
 const Navbar = () => {
   const pathname: string = usePathname();
   const router = useRouter();
   const handleScroll = (id: string) => {
-    const target = document.getElementById(id);
-    if (target) {
-      const topPosition = target.offsetTop; // Get the section's position
-      // Animate the scroll
-      animate(window.scrollY, topPosition, {
-        duration: 1, // Duration of the scroll in seconds
-
-        onUpdate: (value) => {
-          window.scrollTo(0, value);
-        },
-      });
-    }
+    handleScrollTo(id);
   };
 
   // * Adding Links into array
@@ -46,7 +36,7 @@ const Navbar = () => {
           return (
             <li
               onClick={() => handleScroll(link.id)}
-              className="px-6 py-2 bg-secondary text-[12px] font-semibold rounded-[10px] cursor-pointer  "
+              className={`px-6 py-2 bg-secondary text-[12px] font-semibold rounded-[10px] cursor-pointer ${link.id=="footer"?" hidden lg:block":""}  `}
               key={index}
             >
               {link.name}

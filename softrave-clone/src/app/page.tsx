@@ -1,15 +1,12 @@
 "use client";
-import Navbar from "@/components/FrontEnd/Navbar";
 import { useEffect, useRef, useState } from "react";
-
 import "../styles/locomotive-scroll.css";
 import Hero from "@/components/FrontEnd/Hero";
-import About from "@/components/FrontEnd/About";
 import Projects from "@/components/Backend/Projects";
+import About from "@/components/FrontEnd/About";
 import Services from "@/components/FrontEnd/Services";
 import Faq from "@/components/FrontEnd/Faq";
-import Contact from "@/components/FrontEnd/Contact";
-import Footer from "@/components/FrontEnd/Footer";
+
 import GoUp from "@/components/FrontEnd/GoUp";
 
 export default function Home() {
@@ -30,7 +27,7 @@ export default function Home() {
         className="overflow-x-hidden"
       >
         <section
-          className="min-h-dvh mx-5 bg-white mt-28   rounded-p  py-[7.5rem]"
+          className="min-h-dvh  flex flex-col justify-center lg:block  mx-5 bg-white mt-28   rounded-p  py-[7.5rem]"
           id="hero"
         >
           <Hero />
@@ -38,7 +35,7 @@ export default function Home() {
         <GoUp />
         <section
           id="about us"
-          className="h-fit grid grid-cols-10   mx-5 my-16 "
+          className="h-fit grid grid-cols-10  gap-10 mx-5 my-16 "
         >
           <About />
         </section>
@@ -51,10 +48,9 @@ export default function Home() {
         >
           <Services />
         </section>
-        <section id="faq" className="min-h-dvh pt-16 px-5  ">
+        <section id="faq" className="   min-h-dvh pt-16 px-5  ">
           <Faq />
         </section>
-
       </main>
     </>
   );

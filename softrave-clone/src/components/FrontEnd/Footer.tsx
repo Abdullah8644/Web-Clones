@@ -27,14 +27,14 @@ const Footer = () => {
 
   return (
     <>
-      <div className="row-span-7 flex justify-start items-center">
+      <div className="flex justify-start items-center">
         <p className="font-light text-white w-1/2   leading-7 ">
           Reach out to us via email or whatsapp. Share your tasks with us, and
           let's engage in a conversation to transform them into impactful
           digital experiences.
         </p>
       </div>
-      <div className=" text-white row-span-7 flex flex-col justify-center items-start  ">
+      <div className=" text-white flex flex-col justify-center items-start  ">
         <h4 className="email font-semibold text-[42px] leading-[100px] ">
           info@softrave.com
         </h4>
@@ -51,7 +51,9 @@ const Footer = () => {
           })}
         </ul>
       </div>
-      <div className="w-full col-span-2 border-t font-light  border-t-white border-opacity-20 flex justify-between text-white items-end    ">
+      <div className="line bottom-[15%]  lg:bottom-[20%] bg-white w-screen h-1  absolute left-0 opacity-15 " ></div>
+      <div></div>
+      <div className="w-full font-light py-4   border-opacity-20 flex justify-between text-white items-end    ">
         <span>© 2020-2025 Softrave</span>
         <div className="flex items-center w-1/2 pr-60  justify-between" >
           <span>Privacy Policy</span>

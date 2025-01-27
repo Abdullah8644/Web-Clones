@@ -5,7 +5,7 @@ const Faq = () => {
   return (
     <>
       <div className="text my-16 px-5 ">
-        <h2 className="font-medium leading-[90px] text-[80px] ">
+        <h2 className="font-medium leading-[65px]  lg:leading-[90px]  text-[55px]  lg:text-[80px] ">
           Tell us about your problem, and we <br /> will offer the best solution
           for it
         </h2>
@@ -18,8 +18,8 @@ const Faq = () => {
           />
         </div>
       </div>
-      <div className="w-full h-[55vh]  min-h-[50vh] bg-primary  rounded-p flex my-10 px-10 items-center  ">
-        <h4 className="text-white font-medium text-[80px] w-[80%] leading-[90px]  ">
+      <div className="w-full  h-[35vh]  lg:h-[55vh]  lg:min-h-[50vh] bg-primary  rounded-p flex my-10 px-10 items-center  ">
+        <h4 className="text-white font-medium  text-[55px] leading-[65px]  lg:text-[80px] w-[80%] lg:leading-[90px]  ">
           We work with projects transparently and honestly
         </h4>
         <div className="relative h-[80%]  w-[20%] ">
@@ -32,17 +32,17 @@ const Faq = () => {
         </div>
       </div>
       <div className="bg-white w-full  h-[80vh]  rounded-p flex px-[30px] ">
-        <div className="text w-[60%]  flex flex-col justify-center h-[80vh] gap-10  ">
-          <h3 className="font-medium text-[80px] leading-[80px] ">
+        <div className="text w-[80%]  flex flex-col justify-center h-[80vh] gap-10  ">
+          <h3 className="font-medium  text-[50px] leading-[50px]   lg:text-[80px] lg:leading-[80px] ">
             We quickly answer work <br />
             questions
           </h3>
-          <p className="w-[40%] font-semibold ">
+          <p className=" w-[90%]  lg:w-[40%] font-semibold ">
             We hold video conferences where we explain all decisions. And if
             necessary, we will record a video guide on how to use the product.
           </p>
         </div>
-        <div className="logos w-[40%]  h-[50%] self-center mb-20  relative ">
+        <div className="logos w-[30%] h-[40%]   lg:w-[40%]  lg:h-[50%] self-center lg:mb-20  relative ">
           <Image
             src={"/imgs/social.png"}
             alt="social-logos"

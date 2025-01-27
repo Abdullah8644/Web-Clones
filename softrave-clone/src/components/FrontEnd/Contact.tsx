@@ -16,30 +16,50 @@ function mapRange(
 }
 
 const Contact = () => {
+  let isMinWidth1023: boolean;
+
+  const [pathname, setPathname] = useState<string>();
   const [scrollY, setScrollY] = useState(0);
   const [Size, setSize] = useState(0);
   const path = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (path == "/") {
-        if (window.scrollY > 5000) {
-          setScrollY(window.scrollY - 6200);
+    setPathname(path);
+  }, [path, pathname]);
 
-          setSize(mapRange(window.scrollY - 5000, 0, 300, 1, 1.1));
+  useEffect(() => {
+    isMinWidth1023 = window.matchMedia("(min-width: 1023px)").matches;
+
+    const handleScroll = () => {
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPosition = window.scrollY;
+
+      let scrollThreshold;
+
+      if (pathname == "/") {
+        if (isMinWidth1023) {
+          scrollThreshold = documentHeight * 0.82;
         } else {
-          setScrollY(-100);
-          setSize(1);
+          scrollThreshold = documentHeight * 0.8;
         }
       } else {
-        if (window.scrollY > 100) {
-          setScrollY(window.scrollY - 500);
+        scrollThreshold = documentHeight * 0.2;
+      }
 
-          setSize(mapRange(window.scrollY - 500, 0, 300, 1, 1.1));
-        } else {
-          setScrollY(-100);
-          setSize(1);
-        }
+      if (scrollPosition > scrollThreshold) {
+        setScrollY(scrollPosition - scrollThreshold);
+
+        const sizeFactor = mapRange(
+          scrollPosition - scrollThreshold,
+          0,
+          300,
+          1,
+          pathname == "/" ? 1.3 : 1.2
+        );
+        setSize(sizeFactor);
+      } else {
+        setScrollY(-250);
+        setSize(1);
       }
     };
 
@@ -48,14 +68,15 @@ const Contact = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [pathname]);
+
   return (
     <div className="bg-black">
       <div className="relative h-screen w-full flex justify-center items-center  bg-secondary rounded-b-[50px]  ">
         <motion.div
           animate={{ scale: Size == 0 ? 1 : Size }}
           transition={{
-            duration: 0.5,
+            duration: 0.2,
             ease: "linear",
           }}
           className="circle absolute  z-10 w-60 h-60   bg-primary  rounded-full top-[32%] left-[40%]   text-[32px] text-white text-center font-semibold cursor-pointer  "
@@ -78,11 +99,11 @@ const Contact = () => {
           </motion.span>
         </motion.div>
         <motion.div
-          animate={{ translateX: scrollY * -0.5 }}
+          animate={{ translateX: scrollY * -0.4 }}
           transition={{
-            duration: 1,
+            duration: 0.5,
           }}
-          className="text font-bold text-[120px]  "
+          className="text font-bold  text-[50px] lg:text-[120px]  "
         >
           Connect with us
         </motion.div>

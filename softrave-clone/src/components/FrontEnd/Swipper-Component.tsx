@@ -15,17 +15,16 @@ type CardProps = {
   imgLink: string;
   cardBackground: string;
   darkText: boolean;
-
 };
 
 type Props = {
   cards: CardProps[];
 };
 
-const MySwiper = ({ cards  }: Props) => {
+const MySwiper = ({ cards }: Props) => {
   return (
     <Swiper
-      className="h-[80vh] w-full z-10  selection:cursor-pointer "
+      className=" h-[60vh]  lg:h-[80vh] w-full z-10  selection:cursor-pointer "
       modules={[Navigation, Pagination, Autoplay]}
       navigation={{
         prevEl: ".custom-prev-button",
@@ -58,13 +57,13 @@ const MySwiper = ({ cards  }: Props) => {
         return (
           <SwiperSlide key={index}>
             <div
-              className="card rounded-xl h-full w-full px-4 py-6 flex flex-col gap-6 justify-between   "
+              className="card  rounded-[30px] lg:rounded-xl h-full w-full px-4 py-6 flex flex-col gap-6 justify-between   "
               style={{
                 backgroundColor: card.cardBackground,
                 color: card.darkText ? "black" : "white",
               }}
             >
-              <div className="flex flex-col gap-5 h-[40%] ">
+              <div className="flex flex-col gap-5 h-[40%]  ">
                 <h4 className="text-[22px] font-bold">{card.heading}</h4>
                 <p className="text-lg">{card.cardText}</p>
               </div>

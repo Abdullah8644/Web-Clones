@@ -12,7 +12,7 @@
     "colorthief": "^2.6.0",
     "fast-average-color": "^9.4.0",
     "framer-motion": "^12.0.5",
-    "locomotive-scroll": "^4.1.4",
+    "locomotive-scroll": "^5.0.0-beta.21",
     "lodash": "^4.17.21",
     "next": "15.1.6",
     "react": "^19.0.0",

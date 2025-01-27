@@ -23,7 +23,7 @@ const Hero = () => {
 
   return (
     <>
-      <h1 className="text-[75px] font-semibold px-6 leading-[83px]">
+      <h1 className={" text-[43px] leading-[50px]  lg:text-[75px] font-semibold px-6 lg:leading-[83px]"}>
         We design <span className="text-primary">apps, websites & brands.</span>
         <br />
         We work with manufacturing, fintech <br /> and retail{" "}
@@ -32,7 +32,7 @@ const Hero = () => {
         animate={{
           x: -scrollY * 0.2,
         }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 0.4 }}
         className="flex w-full h-10 items-center gap-10 my-20 mb-5  "
       >
         {companyes.map((company, index) => {

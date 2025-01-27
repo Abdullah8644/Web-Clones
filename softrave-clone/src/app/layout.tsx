@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/FrontEnd/Navbar";
 import Contact from "@/components/FrontEnd/Contact";
 import Footer from "@/components/FrontEnd/Footer";
+import Smooth_Scroll from "@/components/FrontEnd/Smooth_Scroll";
 
 const notosans = Noto_Sans({
   variable: "--font-geist-sans",
@@ -23,19 +24,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${notosans.className}  antialiased bg-secondary`}>
+        <Smooth_Scroll />
         <header className="fixed top-0  z-20 w-full px-5">
           <Navbar />
         </header>
-        <div className="overflow-hidden" >
+        <div className="overflow-hidden">
           {children}
           <section id="contact" className="min-h-dvh ">
             <Contact />
           </section>
           <section
             id="footer"
-            className="h-[60vh] w-screen bg-[#313131]  grid grid-cols-2 grid-rows-8 px-16 "
+            className="h-[60vh] w-screen bg-[#313131] relative flex flex-col justify-end gap-10  px-16 "
           >
-            <Footer />.
+            <Footer />
           </section>
         </div>
       </body>

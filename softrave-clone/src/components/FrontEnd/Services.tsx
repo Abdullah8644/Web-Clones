@@ -57,12 +57,14 @@ const Services = () => {
           />
         </div>
       </div>
-      <div className="cards grid grid-cols-3 gap-10 my-10 ">
+      <div className="cards grid grid-cols-2  lg:grid-cols-3 gap-10 my-10 ">
         {cards.map((card, index) => {
           return (
             <div
               key={index}
-              className="card border border-black  h-[90vh] rounded-[35px]  p-[35px] flex flex-col gap-10  "
+              className={`card border border-black  h-[60vh]  lg:h-[90vh] rounded-[35px]  p-[35px] flex flex-col gap-10 ${
+                index == cards.length - 1?"col-span-2  lg:col-span-1 ":""
+              }  `}
             >
               <h3 className="text-[34px] leading-[34px] font-bold w-[90%] ">
                 {card.heading}
@@ -81,9 +83,10 @@ const Services = () => {
                 })}
               </ul>
 
-              <div className="discuss-btn mx-auto text-white px-5  tracking-[0.14rem] py-1  bg-primary text-[14px] font-medium  leading-[30px] rounded-[10px]   ">discuss the project</div>
+              <div className="discuss-btn mx-auto text-white px-5  tracking-[0.14rem] py-1  bg-primary text-[14px] font-medium  leading-[30px] rounded-[10px]   ">
+                discuss the project
+              </div>
             </div>
-
           );
         })}
       </div>
