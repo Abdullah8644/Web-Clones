@@ -8,7 +8,7 @@ const notfound = () => {
         404
       </div>
       <div className="text text-white  text-[48px]  ">Did you get lost?</div>
-      <p className="font-light  text-[#c6c9d8]">
+      <p className="font-light   text-[#c6c9d8]">
         The page you were looking for could not be found.
       </p>
       <Link
