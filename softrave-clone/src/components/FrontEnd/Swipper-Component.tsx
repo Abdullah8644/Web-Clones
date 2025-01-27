@@ -5,7 +5,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 
-import { motion } from "framer-motion";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Image from "next/image";
 

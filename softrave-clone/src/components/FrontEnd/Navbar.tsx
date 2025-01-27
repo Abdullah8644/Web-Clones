@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import { animate } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -22,7 +21,7 @@ const Navbar = () => {
     { name: "contact", id: "footer" },
   ];
   return (
-    <nav className="w-full  bg-white flex justify-between py-5 rounded-b-[40px] px-14 items-center ">
+    <nav className="w-full  bg-white flex justify-between py-5 rounded-b-[40px] px-14 items-center sm:hidden ">
       <div
         className="logo cursor-pointer "
         onClick={() =>
