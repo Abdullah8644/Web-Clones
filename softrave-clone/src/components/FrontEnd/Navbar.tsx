@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: "contact", id: "footer" },
   ];
   return (
-    <nav className="w-full  bg-white flex justify-between py-5 rounded-b-[40px] px-14 items-center sm:hidden ">
+    <nav className="w-full  bg-white hidden justify-between py-5 rounded-b-[40px] px-14 items-center sm:flex ">
       <div
         className="logo cursor-pointer "
         onClick={() =>
@@ -35,7 +35,9 @@ const Navbar = () => {
           return (
             <li
               onClick={() => handleScroll(link.id)}
-              className={`px-6 py-2 bg-secondary text-[12px] font-semibold rounded-[10px] cursor-pointer ${link.id=="footer"?" hidden lg:block":""}  `}
+              className={`px-6 py-2 bg-secondary text-[12px] font-semibold rounded-[10px] cursor-pointer ${
+                link.id == "footer" ? " hidden lg:block" : ""
+              }  `}
               key={index}
             >
               {link.name}
