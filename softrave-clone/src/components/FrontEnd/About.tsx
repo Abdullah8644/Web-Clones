@@ -4,6 +4,7 @@ import Image from "next/image";
 
 const courier = Courier_Prime({
   weight: "400",
+  subsets: ["latin", "latin-ext"],
 });
 
 const About = () => {
