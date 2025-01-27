@@ -146,9 +146,9 @@ const Projects = () => {
             className="ui-ux bg-white rounded-p px-[30px] py-[50px] flex flex-col gap-10  "
           >
             <div className="flex justify-between">
-              <h1 className="text-primary text-[38px] font-semibold  ">
-                UI/UX design
-              </h1>
+              <h3 className="text-primary text-[38px] font-semibold  ">
+                {section.section_heading}
+              </h3>
               <Link
                 href={"projects/ui-ux-desgin"}
                 className="text-[18px] font-medium "

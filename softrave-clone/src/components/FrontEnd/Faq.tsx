@@ -19,9 +19,9 @@ const Faq = () => {
         </div>
       </div>
       <div className="w-full  h-[35vh]  lg:h-[55vh]  lg:min-h-[50vh] bg-primary  rounded-p flex my-10 px-10 items-center  ">
-        <h4 className="text-white font-medium  text-[55px] leading-[65px]  lg:text-[80px] w-[80%] lg:leading-[90px]  ">
+        <h2 className="text-white font-medium  text-[55px] leading-[65px]  lg:text-[80px] w-[80%] lg:leading-[90px]  ">
           We work with projects transparently and honestly
-        </h4>
+        </h2>
         <div className="relative h-[80%]  w-[20%] ">
           <Image
             src={"/imgs/daimond.png"}

@@ -63,7 +63,7 @@ const MySwiper = ({ cards }: Props) => {
               }}
             >
               <div className="flex flex-col gap-5 h-[40%]  ">
-                <h4 className="text-[22px] font-bold">{card.heading}</h4>
+                <span className="text-[22px] font-bold">{card.heading}</span>
                 <p className="text-lg">{card.cardText}</p>
               </div>
               <div className="w-full h-[60%]  relative ">
