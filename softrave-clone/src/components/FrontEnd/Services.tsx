@@ -62,7 +62,7 @@ const Services = () => {
           return (
             <div
               key={index}
-              className={`card border border-black  h-[60vh]  lg:h-[90vh] rounded-[35px]  p-[35px] flex flex-col gap-10 ${
+              className={`card border border-black  min-h-[60vh]  lg:h-[90vh] rounded-[35px]  p-[35px] flex flex-col gap-10 ${
                 index == cards.length - 1?"sm:col-span-2  lg:col-span-1 ":""
               }  `}
             >
