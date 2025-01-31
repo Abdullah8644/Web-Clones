@@ -42,7 +42,7 @@ const Contact = () => {
           scrollThreshold = documentHeight * 0.8;
         }
       } else {
-        scrollThreshold = documentHeight * 0.2;
+        scrollThreshold  = documentHeight * 0.2;
       }
 
       if (scrollPosition > scrollThreshold) {
