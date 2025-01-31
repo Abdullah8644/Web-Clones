@@ -79,7 +79,7 @@ const Navbar = () => {
         />
       </button>
       <div
-        className={`absolute top-[4.55rem] bg-white text-[#33373d] w-full transition-[height,transform] duration-300 left-0 overflow-hidden ${
+        className={`absolute top-[40.55%] bg-white text-[#33373d] w-full transition-[height,transform] duration-300 left-0 overflow-hidden ${
           isOpen ? "h-[40vh] scale-y-100" : "h-0 scale-y-0"
         } origin-top`}
       >

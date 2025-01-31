@@ -35,7 +35,7 @@ export default function RootLayout({
           </section>
           <section
             id="footer"
-            className="h-[60vh] w-screen bg-[#313131] relative flex flex-col  justify-end gap-20  px-16 "
+            className="h-[60vh] min-h-[60vh] w-screen bg-[#313131] relative flex flex-col  justify-end gap-20  px-16 "
           >
             <Footer />
           </section>
