@@ -70,7 +70,7 @@ const Navbar = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle menu"
       >
-        <img
+        <Image
           src={isOpen ? "/svgs/cross.svg" : "/svgs/ham.svg"}
           alt={isOpen ? "Close menu" : "Open menu"}
           width={30}

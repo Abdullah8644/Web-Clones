@@ -31,8 +31,8 @@ const Footer = () => {
         <div className=" w-full lg:w-1/2  text-white font-light leading-7 ">
           <p>
             Reach out to us via email or whatsapp. Share your tasks with us, and
-            let's engage in a conversation to transform them into impactful
-            digital experiences.
+            let&lsquo;s engage in a conversation to transform them into
+            impactful digital experiences.
           </p>
         </div>
         <div className="space-y-4">
