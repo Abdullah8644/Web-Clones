@@ -71,14 +71,14 @@ const Contact = () => {
 
   return (
     <div className="bg-black">
-      <div className="relative h-screen w-full flex justify-center items-center  bg-secondary rounded-b-[50px]  ">
+      <div className="relative  h-[50vh]  sm:h-screen w-full flex justify-center items-center  bg-secondary rounded-b-[50px]  ">
         <motion.div
           animate={{ scale: Size == 0 ? 1 : Size }}
           transition={{
             duration: 0.2,
             ease: "linear",
           }}
-          className="circle absolute  z-10 w-60 h-60   bg-primary  rounded-full top-[32%] left-[40%]   text-[32px] text-white text-center font-semibold cursor-pointer  "
+          className="circle absolute h-40 w-40  z-10 sm:w-60 sm:h-60   bg-primary  rounded-full  sm:top-[32%] sm:left-[40%]  text-[20px]  sm:text-[32px] text-white text-center font-semibold cursor-pointer  "
         >
           <motion.span
             className="w-full h-full flex justify-center items-center "
@@ -102,7 +102,7 @@ const Contact = () => {
           transition={{
             duration: 0.5,
           }}
-          className="text font-bold  text-[50px] lg:text-[120px]  "
+          className="text font-bold text-[34px]  sm:text-[50px] lg:text-[120px]  "
         >
           Connect with us
         </motion.div>

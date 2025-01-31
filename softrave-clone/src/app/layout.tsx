@@ -25,17 +25,17 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${notosans.className}  antialiased bg-secondary`}>
         <Smooth_Scroll />
-        <header className="fixed top-0  z-20 w-full px-5">
+        <header className="fixed top-0 h-[50vh] z-20 w-full px-5">
           <Navbar />
         </header>
         <div className="overflow-hidden">
           {children}
-          <section id="contact" className="min-h-dvh ">
+          <section id="contact" className=" min-h-[50vh]  sm:min-h-dvh ">
             <Contact />
           </section>
           <section
             id="footer"
-            className="h-[60vh] w-screen bg-[#313131] relative flex flex-col justify-end gap-10  px-16 "
+            className="h-[60vh] w-screen bg-[#313131] relative flex flex-col  justify-end gap-20  px-16 "
           >
             <Footer />
           </section>

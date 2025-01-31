@@ -44,11 +44,11 @@ const Services = () => {
 
   return (
     <>
-      <div className="text flex flex-col gap-6 w-[850px]   ">
-        <h2 className="text-[80px] font-medium leading-[90px] ">
+      <div className="text flex flex-col gap-6  w-full  sm:w-[850px]   ">
+        <h2 className=" text-[34px]  leading-[41px]  sm:text-[80px] font-medium sm:leading-[90px] ">
           This is what we can do as cool as possible
         </h2>
-        <div className="w-[50%] flex justify-end ">
+        <div className="w-[50%] hidden sm:flex justify-end ">
           <Image
             src={"/svgs/style-line.svg"}
             alt="styled-line"
@@ -57,13 +57,13 @@ const Services = () => {
           />
         </div>
       </div>
-      <div className="cards grid grid-cols-2  lg:grid-cols-3 gap-10 my-10 ">
+      <div className="cards grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-10 my-10 ">
         {cards.map((card, index) => {
           return (
             <div
               key={index}
               className={`card border border-black  h-[60vh]  lg:h-[90vh] rounded-[35px]  p-[35px] flex flex-col gap-10 ${
-                index == cards.length - 1?"col-span-2  lg:col-span-1 ":""
+                index == cards.length - 1?"sm:col-span-2  lg:col-span-1 ":""
               }  `}
             >
               <h3 className="text-[34px] leading-[34px] font-bold w-[90%] ">

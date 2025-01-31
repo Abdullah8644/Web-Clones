@@ -4,13 +4,14 @@ import React from "react";
 const Faq = () => {
   return (
     <>
-      <div className="text my-16 px-5 ">
-        <h2 className="font-medium leading-[65px]  lg:leading-[90px]  text-[55px]  lg:text-[80px] ">
-          Tell us about your problem, and we <br /> will offer the best solution
-          for it
+      <div className="text  my-10 sm:my-16 pr-16 sm:pr-5 sm:px-5 ">
+        <h2 className="font-medium text-[34px] leading-[44px]  sm:leading-[65px]  lg:leading-[90px]  sm:text-[55px]  lg:text-[80px] ">
+          Tell us about your problem, and we <br className=" hidden sm:block" />{" "}
+          will offer the best solution for it
         </h2>
         <div className="flex justify-center my-2 pr-40  ">
           <Image
+            className="hidden sm:block"
             src={"/svgs/style-line.svg"}
             alt="styled-line"
             width={530}
@@ -18,8 +19,8 @@ const Faq = () => {
           />
         </div>
       </div>
-      <div className="w-full  h-[35vh]  lg:h-[55vh]  lg:min-h-[50vh] bg-primary  rounded-p flex my-10 px-10 items-center  ">
-        <h2 className="text-white font-medium  text-[55px] leading-[65px]  lg:text-[80px] w-[80%] lg:leading-[90px]  ">
+      <div className="w-full  h-[35vh]  lg:h-[55vh]  lg:min-h-[50vh] bg-primary  rounded-p flex flex-col sm:flex-row py-5 sm:py-0 sm:my-10 sm:px-10 items-center  ">
+        <h2 className="text-white font-medium text-[26px] leading-[30px]   sm:text-[55px] sm:leading-[65px]  lg:text-[80px] w-[80%] lg:leading-[90px]  ">
           We work with projects transparently and honestly
         </h2>
         <div className="relative h-[80%]  w-[20%] ">
@@ -31,9 +32,9 @@ const Faq = () => {
           />
         </div>
       </div>
-      <div className="bg-white w-full  h-[80vh]  rounded-p flex px-[30px] ">
-        <div className="text w-[80%]  flex flex-col justify-center h-[80vh] gap-10  ">
-          <h3 className="font-medium  text-[50px] leading-[50px]   lg:text-[80px] lg:leading-[80px] ">
+      <div className="bg-white w-full  h-[80vh]  rounded-p flex flex-col sm:flex-row px-3  sm:px-[30px] ">
+        <div className="text  sm:w-[80%]  flex flex-col justify-center h-[80vh] gap-10  ">
+          <h3 className="font-medium text-[34px] leading-[44px]  sm:text-[50px] sm:leading-[50px]   lg:text-[80px] lg:leading-[80px] ">
             We quickly answer work <br />
             questions
           </h3>
@@ -42,7 +43,7 @@ const Faq = () => {
             necessary, we will record a video guide on how to use the product.
           </p>
         </div>
-        <div className="logos w-[30%] h-[40%]   lg:w-[40%]  lg:h-[50%] self-center lg:mb-20  relative ">
+        <div className="logos w-full h-full  sm:w-[30%] sm:h-[40%]   lg:w-[40%]  lg:h-[50%] self-center lg:mb-20  relative ">
           <Image
             src={"/imgs/social.png"}
             alt="social-logos"

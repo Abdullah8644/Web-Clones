@@ -143,9 +143,9 @@ const Projects = () => {
         return (
           <section
             key={section.section_id}
-            className="ui-ux bg-white rounded-p px-[30px] py-[50px] flex flex-col gap-10  "
+            className="ui-ux bg-white rounded-p sm:px-[30px] py-[50px] flex flex-col gap-10  "
           >
-            <div className="flex justify-between">
+            <div className="flex justify-between flex-col  sm:flex-row   ">
               <h3 className="text-primary text-[38px] font-semibold  ">
                 {section.section_heading}
               </h3>

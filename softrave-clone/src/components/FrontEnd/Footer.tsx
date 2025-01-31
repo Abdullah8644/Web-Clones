@@ -27,39 +27,44 @@ const Footer = () => {
 
   return (
     <>
-      <div className="flex justify-start items-center">
-        <p className="font-light text-white w-1/2   leading-7 ">
-          Reach out to us via email or whatsapp. Share your tasks with us, and
-          let&apos;s engage in a conversation to transform them into impactful
-          digital experiences.
-        </p>
-      </div>
-      <div className=" text-white flex flex-col justify-center items-start  ">
-        <h4 className="email font-semibold text-[42px] leading-[100px] ">
-          info@softrave.com
-        </h4>
-        <ul className="flex w-full gap-4 justify-between">
-          {social_links.map((link, index) => {
-            return (
-              <li
-                key={index}
-                className="px-[30px]  font-semibold py-[5px] bg-primary  rounded-[10px]"
-              >
-                <Link href={link.siteLink}>{link.siteName}</Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      <div className="line bottom-[15%]  lg:bottom-[20%] bg-white w-screen h-1  absolute left-0 opacity-15 "></div>
-      <div></div>
-      <div className="w-full font-light py-4   border-opacity-20 flex justify-between text-white items-end    ">
-        <span>© 2020-2025 Softrave</span>
-        <div className="flex items-center w-1/2 pr-60  justify-between">
-          <span>Privacy Policy</span>
-          <span>Terms</span>
+      <div className="grid grid-cols-1 gap-4 lg:gap-0  lg:grid-cols-2">
+        <div className=" w-full lg:w-1/2  text-white font-light leading-7 ">
+          <p>
+            Reach out to us via email or whatsapp. Share your tasks with us, and
+            let's engage in a conversation to transform them into impactful
+            digital experiences.
+          </p>
+        </div>
+        <div className="space-y-4">
+          <h3 className="  text-[30px] lg:text-[42px] font-semibold text-white  ">
+            <Link href={"mailto:info@softrave.com"}>info@softrave.com</Link>
+          </h3>
+          <ul className=" grid grid-cols-2  sm:flex gap-3   ">
+            {social_links.map((link, index) => {
+              return (
+                <li
+                  key={index}
+                  className="text-white bg-primary w-full text-center    lg:px-[30px]  py-[6px]  rounded-[10px]"
+                >
+                  <Link href={link.siteLink} target="_blank">
+                    {link.siteName}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
+      <div className="line absolute w-full h-[1px] bg-white left-0 bottom-20 opacity-10 "></div>
+      <footer className="py-4 flex justify-between ">
+        <span className="font-light text-white">© 2020-2025 Softrave</span>
+
+        <div className="text-white  w-1/2 flex font-light justify-between ">
+          <span>Privacy Policy</span>
+          <span>Terms</span>
+          <span></span>
+        </div>
+      </footer>
     </>
   );
 };

@@ -1,10 +1,22 @@
 "use client";
-import {  motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Hero = () => {
-  const companyes: number[] = [1, 2, 3, 4, 5, 6, 1, 2];
+  const isMinWidth640 = useRef<boolean>(false);
+  useEffect(() => {
+    isMinWidth640.current = window.matchMedia("(min-width: 1023px)").matches;
+  }, []);
+
+  let companyes: number[];
+  companyes = [1, 2, 3];
+
+  if (isMinWidth640.current) {
+    companyes = [1, 2, 3, 4, 5, 6, 1, 2];
+  } else {
+    companyes = [1, 2, 3];
+  }
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -23,9 +35,14 @@ const Hero = () => {
 
   return (
     <>
-      <h1 className={" text-[43px] leading-[50px]  lg:text-[75px] font-semibold px-6 lg:leading-[83px]"}>
-        We design <span className="text-primary">apps, websites & brands.</span>
-        <br />
+      <h1
+        className={
+          " text-[27px] sm:text-[43px] leading-[30px] sm:leading-[50px]  lg:text-[75px] font-semibold px-6 lg:leading-[83px]"
+        }
+      >
+        We design{" "}
+        <span className="text-primary">apps, websites & brands. </span>
+        <br className=" hidden sm:block " />
         We work with manufacturing, fintech <br /> and retail{" "}
       </h1>
       <motion.ul
@@ -37,7 +54,7 @@ const Hero = () => {
       >
         {companyes.map((company, index) => {
           return (
-            <li key={index} className="relative w-[10%] h-full ">
+            <li key={index} className="relative w-1/2  sm:w-[10%] h-full ">
               <Image
                 src={`/company-logos/company-${company}.png`}
                 alt={`company-${company} `}

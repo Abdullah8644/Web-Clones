@@ -31,21 +31,20 @@ const MySwiper = ({ cards }: Props) => {
       }}
       pagination={{ clickable: true, el: null }}
       breakpoints={{
-        640: {
+        
+        100: {
           // When the screen width is >= 640px
           slidesPerView: 1,
         },
-        1020: {
-          // When the screen width is >= 768px
+        767: {
           slidesPerView: 2,
         },
         1300: {
-          // When the screen width is >= 1024px
           slidesPerView: 3,
         },
       }}
       spaceBetween={30}
-      slidesPerView={3}
+      slidesPerView={1}
       autoplay={{
         delay: 10000, // Delay between auto swipes (in milliseconds)
         disableOnInteraction: false, // Keep autoplay active on user interaction

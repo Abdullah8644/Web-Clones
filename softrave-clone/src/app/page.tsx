@@ -27,14 +27,14 @@ export default function Home() {
         className="overflow-x-hidden"
       >
         <section
-          className="min-h-dvh  flex flex-col justify-center lg:block  mx-5 bg-white mt-28   rounded-p  py-[7.5rem]"
+          className=" min-h-[50vh]  sm:min-h-dvh  flex flex-col justify-center lg:block mx-3 sm:mx-5 bg-white mt-28   rounded-p  py-[7.5rem]"
           id="hero"
         >
           <Hero />
         </section>
         <GoUp />
         <section
-          id="about us"
+          id="about"
           className="h-fit grid grid-cols-10  gap-10 mx-5 my-16 "
         >
           <About />
@@ -44,11 +44,11 @@ export default function Home() {
         </section>
         <section
           id="services"
-          className="min-h-dvh mx-5  bg-white rounded-p my-5  p-10   "
+          className="min-h-dvh mx-5  bg-white rounded-p my-5  px-3 sm:p-10   "
         >
           <Services />
         </section>
-        <section id="faq" className="   min-h-dvh pt-16 px-5  ">
+        <section id="faq" className="  min-h-[70vh]  sm:min-h-dvh sm:pt-16 px-4 sm:px-5  ">
           <Faq />
         </section>
       </main>

@@ -33,7 +33,7 @@ const GoUp = () => {
           onClick={() => {
             handleScrollTo("hero");
           }}
-          className={`fixed bottom-12 right-12 h-12 w-12 bg-white z-40 shadow-[0_0_10px_0_rgba(0,0,0,0.2)] flex justify-center items-center rounded-full  text-3xl  hover:bg-primary p-3 hover:text-white transition-colors duration-300`}
+          className={`fixed bottom-12 right-12 h-12 w-12 bg-white z-40 shadow-[0_0_10px_0_rgba(0,0,0,0.2)] flex justify-center items-center rounded-full  text-3xl text-primary  hover:bg-primary p-3 hover:text-white transition-colors duration-300`}
         >
           <svg
             className="w-full h-full"
